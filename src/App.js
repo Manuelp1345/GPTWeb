@@ -12,7 +12,7 @@ import {
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.REACT_APP_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -24,6 +24,7 @@ function App() {
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
+    console.log(process.env.REACT_APP_KEY);
   };
 
   const handleSendMessage = async () => {
